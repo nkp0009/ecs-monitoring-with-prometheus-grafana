@@ -2,7 +2,7 @@ version: '3'
 
 services:
   prometheus:
-    image: prom/prometheus:v2.4.0
+    image: prom/prometheus:v3.0.0
     volumes:
       - prometheus_config:/etc/prometheus/
     ports:
@@ -22,7 +22,7 @@ services:
     image: alpine:latest
     volumes:
       - prometheus_config:/mnt/
-    command: wget https://raw.githubusercontent.com/santosh07bec/ecs-monitoring-with-prometheus-grafana/master/prometheus.yml -P /mnt/
+    command: wget https://github.com/nkp0009/ecs-monitoring-with-prometheus-grafana/blob/master/prometheus.yml -P /mnt/
   grafana:
     image: grafana/grafana
     ports:
